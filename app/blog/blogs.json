@@ -1,0 +1,20 @@
+[
+  {
+    "title": "The Future of Precision Agriculture",
+    "image": "/agriculture.jpeg",
+    "description": "Explore how technology is shaping the future of farming with robotics, AI, and precision tools.",
+    "link": "#"
+  },
+  {
+    "title": "Bioinformatics in the Modern World",
+    "image": "/bioinfo.jpeg",
+    "description": "How bioinformatics pipelines are driving innovation in research and healthcare.",
+    "link": "#"
+  },
+  {
+    "title": "IT Solutions for Sustainable Growth",
+    "image": "/IT.jpeg",
+    "description": "Discover how IT infrastructure is supporting scalable and sustainable solutions for modern industries.",
+    "link": "#"
+  }
+]

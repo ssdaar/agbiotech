@@ -1,0 +1,180 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background-light: #ffffff;
+  --foreground-light: #171717;
+  --background-dark: #0a0a0a;
+  --foreground-dark: #ededed;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: var(--background-dark);
+    --foreground: var(--foreground-dark);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --background: var(--background-light);
+    --foreground: var(--foreground-light);
+  }
+}
+
+body {
+  color: var(--foreground);
+  background-color: var(--background);
+  font-family: 'Inter', sans-serif; /* Consider using a modern, clean font like Inter */
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  color: var(--foreground);
+}
+
+a {
+  color: #2563eb; /* Tailwind's blue-600 */
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #1d4ed8; /* Tailwind's blue-700 */
+  text-decoration: underline;
+}
+
+nav {
+  background-color: var(--foreground-light);
+  padding: 1rem 2rem;
+  border-bottom: 2px solid var(--foreground-light);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li a {
+  color: var(--background-light);
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+footer {
+  background-color: var(--foreground-light);
+  color: var(--background-light);
+  text-align: center;
+  padding: 20px 0;
+  border-top: 2px solid var(--foreground-light);
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.875rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.section {
+  padding: 4rem 0;
+}
+
+.button {
+  @apply bg-blue-600 text-white font-bold py-2 px-4 rounded-md transition-colors duration-300;
+}
+
+.button:hover {
+  @apply bg-blue-700;
+}
+
+/* Responsive Utilities */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Flex utilities for alignment */
+  .flex-center {
+    @apply flex justify-center items-center;
+  }
+
+  /* .flex-col {
+    @apply flex flex-col;
+  } */
+
+  /* Responsive Padding */
+  .section-padding {
+    @apply py-8 px-4;
+  }
+
+  @screen md {
+    .section-padding {
+      @apply py-16 px-8;
+    }
+  }
+
+  @screen lg {
+    .section-padding {
+      @apply py-20 px-16;
+    }
+  }
+}
+
+/* Custom Dark Mode Adjustments */
+.dark-mode {
+  background-color: var(--background-dark);
+  color: var(--foreground-dark);
+}
+
+.dark-mode nav {
+  background-color: var(--background-dark);
+  border-bottom-color: var(--foreground-dark);
+}
+
+.dark-mode footer {
+  background-color: var(--foreground-dark);
+  color: var(--background-dark);
+  border-top-color: var(--foreground-dark);
+}
+
+.dark-mode a {
+  color: #93c5fd; /* Tailwind's blue-300 for dark mode */
+}
+
+.dark-mode a:hover {
+  color: #bfdbfe; /* Tailwind's blue-200 for dark mode */
+}
+
+/* Add this to globals.css */
+.block-text {
+  font-size: 40pt;
+  font-weight: bold;
+  color: white;
+  text-shadow: 
+    -2px -2px 0px green,   /* Green border shadow on all sides */
+     2px -2px 0px green,
+    -2px  2px 0px green,
+     2px  2px 0px green,
+    -4px -4px 0px white,   /* White margin shadow for spacing */
+     4px -4px 0px white,
+    -4px  4px 0px white,
+     4px  4px 0px white;
+}
